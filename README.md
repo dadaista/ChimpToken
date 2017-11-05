@@ -1,5 +1,5 @@
-# ChimpToken
-Yet another eth ERC20 token, yes because all tutorials cover the easy peasy compile and deploy on testrpc but none of them is useful to deploy on a real network. Here we use ropsten.
+# ChimpToken and Truffle
+Yet another eth ERC20 token example on Truffle? Yes because all tutorials cover the easy peasy compile and deploy on testrpc but none of them is useful to deploy from turllfe to a real network. Here we use ropsten.
 
 
 # Pre-requisites
@@ -35,8 +35,8 @@ If you're using the Ethereum Wallet it is telling you if it is syncing or it is 
 
 # Geth Console usage
 
-This is not a tutorial on geth commands, however let go through a few useful instructions. 
-This will launch geth as a rpc server as well. 
+This is not a tutorial on geth commands, however lets go through few useful instructions. 
+This will launch geth as a rpc server. 
 ```
 parallels@ubuntu:~$ geth --testnet --rpc --rpcapi="db,eth,net,web3,personal,web3"
 ```
@@ -47,13 +47,15 @@ Now open a second bash terminal and attach to the running geth node typing
 geth attach http://127.0.0.1:8545
 ```
 
-On the attached console, while geth is syncing you can launch commands like:
+From now on you have two geth(s), one instance is the node, the second one is just a javascipt terminal attached to the first one.
+
+On the attached console, while geth is syncing, you can launch commands like:
 
 ```
 > web3.eth.blockNumber
 2003004
 ```
-Important! The outcome must be equal to the block number you see in a block explorer like ropsten.etherscan.io.  This means you're synced.
+Important! The outcome must be equal to the block number you see in a block explorer like ropsten.etherscan.io.  This means you're synced, otherwise you have to wait the sync to complete.
 
 
 
@@ -61,7 +63,7 @@ Important! The outcome must be equal to the block number you see in a block expl
 
 # Deploying
 
-First of all, create a new account on your geth. Follow the docs to do that. 
+First of all, create a new account on your geth. Follow the official docs to do that. 
 No surprise, to deploy on a testnet you need fake ethers, you can sort it out starting with Google and searching ropsten faucet. A clever way is to install Metamask, connect to Ropsten and then click Buy. You'll get 1 ether at a time, not bad for testing your contracts.
 
 In assume you're synced and you filled your address with some ethers. 
