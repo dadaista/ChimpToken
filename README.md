@@ -17,7 +17,7 @@ I launched Ubuntu 14.04 VM on Parallels/MacOsX. In my MAC I have also Chrome wit
 
 # Install openzeppelin
 
-Get into the root and launch
+Get into the root folder of your project and launch
 
 ```
 npm install zeppelin-solidity
